@@ -12,25 +12,35 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+  // const container = document.querySelector('.gallery');
+  // const cardMarkup = createMarkup(images);
 
+  // container.insertAdjacentHTML('beforeend', cardMarkup)
 
-const container = document.querySelector('.gallery');
-const cardMarkup = createMarkup(images);
+  // function createMarkup(images) {
+  //   return images
+  //     .map(({ url, alt }) => {
+  //     return `<li>
+  //     <img
+  //     src="${url}"
+  //     alt="${alt}"
+  //     width="100%"
+  //     >
+  //     </li>`;
+  //   })
+  //     .join('');
+    
+  // }
+  // console.log(cardMarkup)
 
-container.insertAdjacentHTML('beforeend', cardMarkup)
+const gallery = document.querySelector('.gallery')
 
-function createMarkup(images) {
-  return images
-    .map(({ url, alt }) => {
-    return `<li>
-    <img
-    src="${url}"
-    alt="${alt}"
-    width="100%"
-    >
-    </li>`;
-  })
-    .join('');
-  
-}
-console.log(cardMarkup)
+const createMarkup = images.map(({ url, alt }) => {
+  return `<li><img
+  src = '${url}'
+  alt = '${alt}'
+  width = '100%'
+  ></li>`
+}).join('');
+//console.log(markup)
+gallery.insertAdjacentHTML('beforeend', createMarkup);
